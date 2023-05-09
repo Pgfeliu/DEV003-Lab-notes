@@ -1,22 +1,30 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter, Murecho } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import {BrowserRouter} from 'react-router-dom'
+// import styles from '../styles/Home.module.css';
+import  '../components/login/login.module.css';
+import ButtonLogin from '@/components/login/login'
+import firebaseApp from '@/firebase/firebaseconfig';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useState } from 'react';
+const auth = getAuth(firebaseApp);
 
-
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//     <app/>
-//     </BrowserRouter>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
+  const{usuarioGlobal,setUsuarioGlobal} = useState(null);
+onAuthStateChanged(auth, (usuarioFirebase) => {
+//revisar si se inició o cerró sesión
+//Primero hay que ver si "usuarioFirebase existe"
+if(usuarioFirebase) {
+  setUsuarioGlobal(usuarioFirebase);
+  console.log('usuarioFirebase Existe');
+} else{
+  setUsuarioGlobal(null);
+
+}
+
+})
+
   return (
     <>
       <Head>
@@ -25,30 +33,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
+      <main>
+        <div>
+          <ButtonLogin/>
           <p>
             NOTES
             </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/hoja.png"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
+          
         </div>
-        <div className={styles.center}>
+        {/* <div className={styles.center}>
           <Image
             className={styles.logo}
             src="/next.svg"
@@ -57,8 +50,8 @@ export default function Home() {
             height={37}
             priority
           />
-        </div>
-        <div className={styles.grid}>
+        </div> */}
+        {/* <div className={styles.grid}>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -112,7 +105,7 @@ export default function Home() {
               with&nbsp;Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
     </>
   )
