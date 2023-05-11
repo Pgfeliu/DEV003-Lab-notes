@@ -27,3 +27,10 @@
     height: 25px;
     margin: 5px;
 }
+
+/*Tarea Completada*/
+ 
+.tareaContenedor.completada {
+    background-color: blueviolet;
+    text-decoration: line-through; /* texto tachado */
+}

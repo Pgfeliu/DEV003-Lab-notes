@@ -1,0 +1,31 @@
+.tareasFormulario {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.tareaInput {
+    width: 350px;
+    font-size:18px;
+    background-color: coral;
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0px 0px 4px;
+    border: 2px solid green;
+    outline:none;
+}
+
+/* Boton agregar tarea */
+
+.tareaBoton {
+    padding: 16px;
+    font-size:18px;
+    font-family:system-ui, 'Helvetica Neue', sans-serif;
+    border-radius: 0px 4px 4px 0px;
+    cursor:pointer;
+    outline:none;
+    background-color: gold;
+    color:blue;
+    text-transform:capitalize;
+
+}
