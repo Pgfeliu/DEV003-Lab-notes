@@ -1,0 +1,35 @@
+
+.navigation{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #9dab34;
+    color:#382a2a;
+    font-size: xx-large;
+}
+
+.titleBoxNotes{
+    color:rgb(255, 255, 255);
+    font-size:50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.boxNotes{
+    width:600px;
+    min-height: 500px;
+    background-color: #63b397;
+    border-radius: 20px;
+    color:rgb(244, 244, 244);
+    padding: 25px;
+    margin:10px;
+    position: relative;
+    left: 25%;
+    top:50px;
+    
+}
+

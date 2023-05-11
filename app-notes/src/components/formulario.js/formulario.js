@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-router-dom";
 
 function Formulario(props) {
 
@@ -13,12 +14,14 @@ function Formulario(props) {
     const manejarEnvio = e => {
         e.preventDefault(); /*permite que no se vuelva a cargar toda la app cuando enviamos el formulario */       
         console.log('Enviando formulario');
+        
 
 
         const tareaNueva = {
     
             id: '34545',
-            texto: 'Hola'
+            texto: input, /*valor de input*/
+            completada : false
         }
        
         }
@@ -32,7 +35,7 @@ function Formulario(props) {
             <input
                 className="tareaInput"
                 type='text'
-                placeholder="Escirbe una nota"
+                placeholder="Escribe una nota aquí"
                 name='texto'
                 onChange={manejarCambio} /*Cuando ocurre cambio en valor de input*/
             />
