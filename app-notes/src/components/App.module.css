@@ -1,0 +1,24 @@
+
+.aplicacion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.tareas{
+    width:600px;
+    min-height: 500px;
+    background-color: hotpink;
+    color:blue;
+    padding: 25px;
+    margin:10px;
+}
+
+.h1{
+    color:black;
+    font-size:25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin: 20px 0px;
+}

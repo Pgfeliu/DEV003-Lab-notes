@@ -3,13 +3,15 @@ import React from 'react'
 import firebaseApp from '@/firebase/firebaseconfig';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import styles from '../login/login.module.css';
-import { Form } from 'react-router-dom';
+
+
 
 //guardar en constante
 const auth = getAuth(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
 
-function ButtonLogin() {
+
+export default function ButtonLogin() {
     const loginWithGoogle = () => {
         signInWithPopup(auth, googleProvider)
     }
@@ -19,4 +21,4 @@ function ButtonLogin() {
     )
 }
 
-export default ButtonLogin;
+
