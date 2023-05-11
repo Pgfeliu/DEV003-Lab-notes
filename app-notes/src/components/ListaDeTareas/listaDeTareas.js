@@ -1,13 +1,24 @@
-import React from "react";
+import React,{useState} from "react";
 import Formulario from "../formulario.js/formulario";
 import '../ListaDeTareas/listaDeTareas.module.css';
+import PageNotes from "../notes/pagesNotes";
+
+
 function ListaDeTareas() {
-    return(
+
+    const [tareas, setTareas] = useState([]);
+
+    return( 
       <>
       <Formulario />
       <div className="tareasListaContenedor">
-        Lista de Tareas
-
+        {
+           tareas.map((tarea) => 
+           <PageNotes
+           texto={tarea.texto}
+           completada={tarea.completada}/>
+            ) 
+        };
       </div>
       </>  
     )
